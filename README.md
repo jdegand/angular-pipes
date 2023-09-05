@@ -4,15 +4,15 @@
 
 ## Screenshots
 
-![](screenshots/angular-pipes-easy.png)
+![](screenshots/angular-pipes-easy.png "Simple Pure Pipe")
 
 ***
 
-![](screenshots/angular-pipes-intermediate.png)
+![](screenshots/angular-pipes-intermediate.png "WrapFn Pipe")
 
 ***
 
-![](screenshots/angular-pipes-hard.png)
+![](screenshots/angular-pipes-hard.png "Utilities Pipe")
 
 ***
 
@@ -65,18 +65,19 @@ In this third exercice, you want to access utils functions. Currently we cannot 
 - Don't use hyphens in the name of pipes.  
 - Calling a function inside a template can have a significant impact on performance as the function will be recomputed every time change detection is executed. 
 - Memo functions are not as flexible as pipes. 
-- Utilities pipe is more of an advanced typescript exercise.   
+- Utilities pipe is more of an advanced typescript exercise. 
 - The utilities pipe's approach is better than the wrapFn pipe because type safety is maintained throughout the whole process? 
 - A key to making anything more typesafe is using the extends keyword.
-- A more specific type extends from a generic type -> similar to overloading -> need a generic base case as a failsafe 
-- [This Solution](https://github.com/tomalaforge/angular-challenges/pull/20/files) reuses wrapFn logic.  However, it is a little harder to understand and has immediate steps versus Thomas' solution.  I find using just super() in the main class a little weird.   
-- Thomas' solution is actually small and relies on some keywords I haven't really needed to use.
+- A more specific type extends from a generic type -> similar to overloading -> need a generic base case as a failsafe
+- I was able to complete the first two pipes but I eventually gave up on the third pipe and looked at the solutions posted.  
+- [This Solution](https://github.com/tomalaforge/angular-challenges/pull/20/files) reuses wrapFn logic.  However, it is a little harder to understand and has intermediate steps versus Thomas' solution.  I find using just super() in the main class a little weird.
+- Thomas' solution is actually small and relies on some keywords I haven't really needed to use.  
 - Parameters is a typescript utility type.  
 - He added `as const` to PersonUtils to allow use of `...args`.  Without it, I think the compiler will complain because the compiler won't know how many arguments are allowed. See [Stack Overflow](https://stackoverflow.com/questions/66993264/what-does-the-as-const-mean-in-typescript-and-what-is-its-use-case) for more.  
 - unknown is I don't know; any is I don't care.
 - never is an empty set. unknown is a set with all possible values.  any is not a set.
 - 'never' prevents defaulting to a more permissible type in conditional logic.  never will cause errors to be thrown if the value doesn't match the inferred type of First.  
-- Some languages treat null as though it is a subtype of every other type, in which case it is effectively a bottom type. (This includes TypeScript if it is not configured with strict checking options.) 
+- Some languages treat null as though it is a subtype of every other type, in which case it is effectively a bottom type. (This includes TypeScript if it is not configured with strict checking options.)
 
 ## Continued Development
 
